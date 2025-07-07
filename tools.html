@@ -8,9 +8,11 @@
   <script>
     function openModal(id) {
       document.getElementById(id).style.display = "block";
+      document.body.style.overflow = "hidden"; // ✅ 배경 스크롤 잠금
     }
     function closeModal(id) {
       document.getElementById(id).style.display = "none";
+      document.body.style.overflow = ""; // ✅ 배경 스크롤 해제
     }
   </script>
 </head>
@@ -22,68 +24,57 @@
   </header>
 
   <main class="grid-container">
+    <!-- 도구 명령어 카드들 -->
     <div class="command-card" onclick="openModal('calcModal')" style="--accent-color: #4D7A94;">
       <h2>/계산</h2>
-      <p>간단한 계산을 수행합니다.</p>
+      <p>간단한 수식을 계산해줍니다.</p>
     </div>
-
     <div class="command-card" onclick="openModal('translateModal')" style="--accent-color: #4D7A94;">
       <h2>/번역</h2>
-      <p>텍스트를 번역해줍니다.</p>
+      <p>입력한 문장을 번역해줍니다.</p>
     </div>
-
     <div class="command-card" onclick="openModal('convertModal')" style="--accent-color: #4D7A94;">
       <h2>/변환</h2>
       <p>문자열을 변환해줍니다.</p>
     </div>
-
     <div class="command-card" onclick="openModal('randomModal')" style="--accent-color: #4D7A94;">
       <h2>/랜덤숫자</h2>
-      <p>지정 범위의 랜덤 숫자를 생성합니다.</p>
+      <p>범위 내 랜덤 숫자를 생성합니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('countModal')" style="--accent-color: #4D7A94;">
+      <h2>/글자수세기</h2>
+      <p>텍스트의 글자 수를 세줍니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('dictModal')" style="--accent-color: #4D7A94;">
+      <h2>/사전</h2>
+      <p>단어의 뜻을 검색합니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('avatarModal')" style="--accent-color: #4D7A94;">
+      <h2>/프사</h2>
+      <p>유저의 프로필 사진을 확인합니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('currencyModal')" style="--accent-color: #4D7A94;">
+      <h2>/환율</h2>
+      <p>통화 단위를 변환합니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('userModal')" style="--accent-color: #4D7A94;">
+      <h2>/유저</h2>
+      <p>유저 정보를 확인합니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('catModal')" style="--accent-color: #4D7A94;">
+      <h2>/고양이</h2>
+      <p>랜덤 고양이 사진을 보여줍니다.</p>
+    </div>
+    <div class="command-card" onclick="openModal('pickModal')" style="--accent-color: #4D7A94;">
+      <h2>/골라</h2>
+      <p>입력한 항목 중 하나를 랜덤으로 골라줍니다.</p>
+    </div>
+
+    <!-- 🔥 빈 카드 -->
+    <div class="command-card placeholder-card">
+      <h2>준비중</h2>
+      <p>새로운 도구 기능이 추가될 예정입니다.</p>
     </div>
   </main>
-
-  <!-- 팝업: /계산 -->
-  <div id="calcModal" class="modal">
-    <div class="modal-content">
-      <h2>🛠 /계산</h2>
-      <span class="close" onclick="closeModal('calcModal')">&times;</span>
-      <p><strong>사용법:</strong> /계산 [수식]</p>
-      <p>예시: /계산 1+1</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
-    </div>
-  </div>
-
-  <!-- 팝업: /번역 -->
-  <div id="translateModal" class="modal">
-    <div class="modal-content">
-      <h2>🛠 /번역</h2>
-      <span class="close" onclick="closeModal('translateModal')">&times;</span>
-      <p><strong>사용법:</strong> /번역 [텍스트]</p>
-      <p>예시: /번역 Hello</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
-    </div>
-  </div>
-
-  <!-- 팝업: /변환 -->
-  <div id="convertModal" class="modal">
-    <div class="modal-content">
-      <h2>🛠 /변환</h2>
-      <span class="close" onclick="closeModal('convertModal')">&times;</span>
-      <p><strong>사용법:</strong> /변환 [텍스트]</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
-    </div>
-  </div>
-
-  <!-- 팝업: /랜덤숫자 -->
-  <div id="randomModal" class="modal">
-    <div class="modal-content">
-      <h2>🛠 /랜덤숫자</h2>
-      <span class="close" onclick="closeModal('randomModal')">&times;</span>
-      <p><strong>사용법:</strong> /랜덤숫자 [최소] [최대] [개수]</p>
-      <p>선택사항: [중복허용]</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
-    </div>
-  </div>
 </body>
 </html>
