@@ -22,24 +22,40 @@
   </header>
 
   <main class="grid-container">
+    <!-- /가챠 -->
     <div class="command-card" onclick="openModal('gachaModal')" style="--accent-color: #3C5874;">
       <h2>/가챠</h2>
       <p>확률과 재화를 입력해 깡통이가 가챠를 돌려줍니다.</p>
     </div>
 
+    <!-- /숫자야구 -->
     <div class="command-card" onclick="openModal('numberModal')" style="--accent-color: #3C5874;">
       <h2>/숫자야구</h2>
-      <p>숫자를 추측해 정답을 맞히는 숫자야구 게임.</p>
+      <p>숫자를 추측해 정답을 맞히는 숫자야구 게임입니다.</p>
     </div>
 
+    <!-- /타자 -->
     <div class="command-card" onclick="openModal('typingModal')" style="--accent-color: #3C5874;">
       <h2>/타자</h2>
-      <p>랜덤 문장을 받아 타자 속도를 측정합니다.</p>
+      <p>랜덤 문장을 입력해 타자 속도를 측정합니다.</p>
     </div>
 
+    <!-- /퀴즈 -->
     <div class="command-card" onclick="openModal('quizModal')" style="--accent-color: #3C5874;">
       <h2>/퀴즈</h2>
       <p>문제와 정답을 입력해 깡통이가 퀴즈를 출제합니다.</p>
+    </div>
+
+    <!-- /냥 -->
+    <div class="command-card" onclick="openModal('nyangModal')" style="--accent-color: #3C5874;">
+      <h2>/냥</h2>
+      <p>입력한 숫자만큼 “냐아~” 출력합니다.</p>
+    </div>
+
+    <!-- 🔥 빈 카드 -->
+    <div class="command-card placeholder-card">
+      <h2>준비중</h2>
+      <p>새로운 게임 기능이 추가될 예정입니다.</p>
     </div>
   </main>
 
@@ -48,10 +64,25 @@
     <div class="modal-content">
       <h2>🎲 /가챠</h2>
       <span class="close" onclick="closeModal('gachaModal')">&times;</span>
-      <p><strong>사용법:</strong> /가챠 [확률] [재화]</p>
-      <p>선택사항: [단위] [최소] [최대]</p>
-      <p>예시: /가챠 0.1 1000 단위:루나 최소:1 최대:5</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
+      <p><strong>📖 사용법:</strong>  
+        <code>/가챠 [확률] [재화]</code><br>
+        선택사항: [단위] [최소] [최대]
+      </p>
+      <p>
+        입력한 확률로 가챠 시뮬레이션을 돌립니다.<br>
+        각 시도마다 성공 여부를 판단하고, 성공까지 걸린 시도 횟수와 사용한 재화를 계산합니다.
+      </p>
+      <p>
+        <strong>예시:</strong><br>
+        <code>/가챠 0.01 100 단위:루나 최소:1 최대:5</code><br>
+        ➡ 확률 1%, 시도당 100루나 소비, 한 번에 1~5개의 아이템 획득
+      </p>
+      <p>
+        <strong>📝 참고:</strong><br>
+        - 매우 낮은 확률(예: 0.0001%)에서는 시뮬레이션 시간이 오래 걸릴 수 있습니다.<br>
+        - 최대 시도 횟수와 제한시간을 넘어가면 자동 종료됩니다.
+      </p>
+      <div class="example-placeholder">🎞️ /가챠 사용 예시 GIF 자리</div>
     </div>
   </div>
 
@@ -60,8 +91,25 @@
     <div class="modal-content">
       <h2>🎲 /숫자야구</h2>
       <span class="close" onclick="closeModal('numberModal')">&times;</span>
-      <p><strong>사용법:</strong> 제한 시간 안에 숫자를 추측해 정답을 맞히는 게임</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
+      <p><strong>📖 사용법:</strong>  
+        <code>/숫자야구</code><br>
+        선택사항: [길이] [숫자]
+      </p>
+      <p>
+        깡통이가 무작위로 생성한 숫자를 맞히는 게임입니다.<br>
+        각 시도마다 스트라이크(S)와 볼(B)를 알려주고, 제한 시간 안에 정답을 맞혀야 합니다.
+      </p>
+      <p>
+        <strong>예시:</strong><br>
+        <code>/숫자야구 길이:4</code><br>
+        ➡ 4자리 숫자 게임 시작 (중복 없는 숫자만 허용)
+      </p>
+      <p>
+        <strong>📝 참고:</strong><br>
+        - 10회 시도 제한과 120초 제한시간이 있습니다.<br>
+        - 채널별로 정답이 공유되어 다른 사용자도 참여할 수 있습니다.
+      </p>
+      <div class="example-placeholder">🎞️ /숫자야구 사용 예시 GIF 자리</div>
     </div>
   </div>
 
@@ -70,8 +118,19 @@
     <div class="modal-content">
       <h2>🎲 /타자</h2>
       <span class="close" onclick="closeModal('typingModal')">&times;</span>
-      <p><strong>사용법:</strong> 랜덤 문장을 받아 타자 속도를 측정합니다.</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
+      <p><strong>📖 사용법:</strong>  
+        <code>/타자 [언어]</code>
+      </p>
+      <p>
+        랜덤 문장을 받아 타자 속도를 측정합니다.<br>
+        사용자가 입력한 문장의 정확도와 초당 입력 속도를 계산합니다.
+      </p>
+      <p>
+        <strong>예시:</strong><br>
+        <code>/타자 언어:영어</code><br>
+        ➡ 영어 문장으로 타자 게임 시작
+      </p>
+      <div class="example-placeholder">🎞️ /타자 사용 예시 GIF 자리</div>
     </div>
   </div>
 
@@ -80,9 +139,50 @@
     <div class="modal-content">
       <h2>🎲 /퀴즈</h2>
       <span class="close" onclick="closeModal('quizModal')">&times;</span>
-      <p><strong>사용법:</strong> 문제와 정답을 입력해 깡통이가 퀴즈를 출제합니다.</p>
-      <div class="example-placeholder">🎞️ GIF 자리</div>
+      <p><strong>📖 사용법:</strong>  
+        <code>/퀴즈 [문제] [정답]</code>
+      </p>
+      <p>
+        깡통이가 문제를 출제하고, 사용자가 정답을 맞히는 게임입니다.<br>
+        정답이 입력되면 깡통이가 채점합니다.
+      </p>
+      <p>
+        <strong>예시:</strong><br>
+        <code>/퀴즈 깡통이의 이름은? 정답:깡통</code>
+      </p>
+      <div class="example-placeholder">🎞️ /퀴즈 사용 예시 GIF 자리</div>
+    </div>
+  </div>
+
+  <!-- 팝업: /냥 -->
+  <div id="nyangModal" class="modal">
+    <div class="modal-content">
+      <h2>🎲 /냥</h2>
+      <span class="close" onclick="closeModal('nyangModal')">&times;</span>
+      <p><strong>📖 사용법:</strong>  
+        <code>/냥 [숫자]</code>
+      </p>
+      <p>
+        입력한 숫자만큼 “냥~” 소리를 랜덤으로 출력합니다.<br>
+        아주 낮은 확률로 귤도 등장할 수 있습니다 🍊
+      </p>
+      <p>
+        <strong>예시:</strong><br>
+        <code>/냥 10</code><br>
+        ➡ 총 10글자의 랜덤 “냐아~” 출력
+      </p>
+      <div class="example-placeholder">🎞️ /냥 사용 예시 GIF 자리</div>
     </div>
   </div>
 </body>
 </html>
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+    document.body.style.overflow = "hidden"; // ✅ 배경 스크롤 잠금
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+    document.body.style.overflow = ""; // ✅ 배경 스크롤 잠금 해제
+  }
+</script>
