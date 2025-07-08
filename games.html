@@ -61,7 +61,7 @@
     </div>
   </main>
 
-  <!-- 팝업: /가챠 -->
+<!-- 팝업: /가챠 -->
 <div id="gachaModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -70,7 +70,7 @@
     </div>
     <div class="modal-body">
       <p><strong>📖 사용법:</strong><br>
-      <code>/가챠 확률 재화 선택:[단위] [최소] [최대]</code>
+        <code>/가챠 확률 재화 선택:[단위] [최소] [최대]</code>
       </p>
 
       <div class="command-options">
@@ -83,10 +83,24 @@
         </ul>
       </div>
 
+      <p>
+        입력한 확률로 가챠 시뮬레이션을 실행합니다.<br>
+        매우 낮은 확률의 경우 실행 시간이 길어질 수 있으며, 깡통이가 자동으로 중단시키는 제한도 포함되어 있습니다.
+      </p>
+
+      <div class="command-caution">
+        <h3>⚠️ 주의</h3>
+        <ul>
+          <li>실행 시간이 과도하게 길어질 경우 자동 중단됩니다.</li>
+          <li>아주 낮은 확률에서는 시도 횟수 제한이 적용될 수 있습니다.</li>
+        </ul>
+      </div>
+
       <div class="command-example">
         <h3>💡 예시</h3>
-        <pre><code>/가챠 0.5 200 단위:코인 최소:1 최대:5</code></pre>
-        <p>→ “총 37회 시도, 7,400코인 사용해써요!”</p>
+        <pre><code>/가챠 0.8 100 단위:코인 최소:1 최대:3</code></pre>
+        <p>→ 성공! 아이템 <code>2</code> 개 획득!<br>
+        총 <code>47</code> 회 시도하여 <code>4,700</code> 코인만큼 사용했어요.</p>
       </div>
 
       <div class="example-placeholder">🎞️ /가챠 사용 예시 GIF 자리</div>
@@ -95,7 +109,9 @@
 </div>
 
 
-  <!-- 팝업: /숫자야구 -->
+
+
+<!-- 팝업: /숫자야구 -->
 <div id="baseballModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -104,8 +120,8 @@
     </div>
     <div class="modal-body">
       <p><strong>📖 사용법:</strong><br>
-      <code>/숫자야구 선택:[길이] [숫자]</code><br>
-      게임 시작 후 채팅창에 숫자만 입력해도 자동으로 처리됩니다.
+        <code>/숫자야구 선택:[길이] [숫자]</code><br>
+        게임 시작 후 채팅창에 숫자만 입력해도 자동으로 처리됩니다.
       </p>
 
       <div class="command-options">
@@ -118,15 +134,21 @@
 
       <p>
         랜덤으로 생성된 중복 없는 숫자를 맞추는 게임입니다.<br>
-        깡통이가 스트라이크(S), 볼(B)로 힌트를 제공합니다.<br>
-        <strong>제한:</strong> 시도 10회, 시간 5분<br>
-        <strong>주의:</strong> 게임 중에는 채널에 숫자만 입력해도 시도로 인식됩니다.
+        깡통이가 스트라이크(S), 볼(B)로 힌트를 제공합니다.
       </p>
+
+      <div class="command-caution">
+        <h3>⚠️ 주의</h3>
+        <ul>
+          <li>제한시간: 5분</li>
+          <li>시도 제한: 최대 10회</li>
+          <li>게임 중에는 채널에 숫자만 입력해도 시도로 인식됩니다.</li>
+        </ul>
+      </div>
 
       <div class="command-example">
         <h3>💡 예시</h3>
-        <pre><code>/숫자야구 길이:3</code></pre>
-        <pre><code>/숫자야구 숫자:3951</code></pre>
+        <pre><code>/숫자야구 길이:4</code></pre>
         <p>게임 시작 후 채팅창에 <code>3951</code> 입력 → “1S 2B” 응답</p>
       </div>
 
@@ -137,7 +159,7 @@
 
 
 
-  <!-- 팝업: /타자 -->
+ <!-- 팝업: /타자 -->
 <div id="typingModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -158,26 +180,22 @@
 
       <p>
         5초 카운트다운 후 문장이 이미지로 표시되며,<br>
-        <strong>오타 없이 입력</strong>해야 성공으로 처리됩니다.<br>
-        일본어 번역 시 쉼표(,)는 일본어 쉼표(、)로 자동 변환됩니다.
+        <strong>오타 없이 입력</strong>해야 성공으로 처리됩니다.
       </p>
-
-      <p><strong>⏱️ 제한시간</strong>: 한국어/영어 1분, 일본어 3분</p>
 
       <div class="command-caution">
         <h3>⚠️ 주의</h3>
         <ul>
+          <li>제한시간: 한국어/영어 1분, 일본어 3분</li>
           <li>이미지와 문장이 일치하지 않으면 입력이 무시됩니다.</li>
           <li><code>타자 종료</code> 버튼으로 게임을 중단할 수 있지만, 너무 많이 누르면 고장날 수 있습니다.</li>
         </ul>
       </div>
 
-      <p><strong>📌 특징:</strong> 여러 서버에서 동시에 실행 가능</p>
-
       <div class="command-example">
         <h3>💡 예시</h3>
         <pre><code>/타자 영어</code></pre>
-        <p>→ 성공!  <code>13.5s</code> 동안 <code>253t</code>로 입력해써요.</p>
+        <p>→ 성공! <code>13.5s</code> 동안 <code>253t</code>로 입력해써요.</p>
       </div>
 
       <div class="example-placeholder">🎞️ /타자 사용 예시 GIF 자리</div>
@@ -186,7 +204,8 @@
 </div>
 
 
-<!-- 팝업: /냥 -->
+
+<<!-- 팝업: /냥 -->
 <div id="nyaModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -207,10 +226,15 @@
 
       <p>
         입력한 개수만큼 “냥” 문자열을 랜덤 출력합니다.<br>
-        30% 확률로 “귤”도 섞여 출력됩니다.<br>
-        긴 출력일수록 변형된 “냐아앙”도 포함될 수 있습니다.<br>
-        <strong>주의:</strong> 출력은 Discord 메시지 길이 제한(최대 2000자)을 넘길 수 없습니다.
+        30% 확률로 “귤”도 섞여 출력됩니다.
       </p>
+
+      <div class="command-caution">
+        <h3>⚠️ 주의</h3>
+        <ul>
+          <li>출력은 Discord 메시지 길이 제한(최대 2,000자)을 넘길 수 없습니다.</li>
+        </ul>
+      </div>
 
       <div class="command-example">
         <h3>💡 예시</h3>
@@ -223,7 +247,8 @@
   </div>
 </div>
 
-  <!-- 팝업: /퀴즈 -->
+
+ <!-- 팝업: /퀴즈 -->
 <div id="quizModal" class="modal">
   <div class="modal-content">
     <div class="modal-header">
@@ -239,24 +264,22 @@
         <h3>🛠 옵션 설명</h3>
         <ul>
           <li><strong>문제 (필수):</strong> 출제할 퀴즈 문제</li>
-          <li><strong>정답 (필수):</strong> 정답 문자열 (대소문자 구분)</li>
+          <li><strong>정답 (필수):</strong> 정답 문자열 (대소문자 및 공백 구분)</li>
         </ul>
       </div>
 
       <p>
         깡통이가 퀴즈를 출제하고, 다른 유저들이 참여할 수 있도록 합니다.<br>
-        참여자는 <strong>정답 제출</strong> 버튼으로 답을 입력하고, 출제자는 언제든지 퀴즈를 종료할 수 있습니다.<br>
-        <strong>서버당 한 번에 1개의 퀴즈만 실행 가능</strong>
+        참여자는 <strong>정답 제출</strong> 버튼으로 답을 입력할 수 있으며, 출제자는 언제든지 퀴즈를 종료할 수 있습니다.<br>
+        <strong>정답 확인</strong> 버튼으로 맞힌 유저 목록을 멘션 출력하거나, <strong>제출 로그</strong> 버튼으로 모든 답변 시도 기록을 확인할 수 있습니다.
       </p>
 
       <div class="command-caution">
         <h3>⚠️ 주의</h3>
         <ul>
           <li>정답은 입력한 문자열과 정확히 일치해야 합니다 (대소문자 및 공백 구분)</li>
-          <li>중복 정답 방지 → 한 명당 1회만 인정</li>
-          <li><strong>정답 확인</strong>: 맞힌 유저 목록 멘션 출력</li>
-          <li><strong>제출 로그</strong>: 모든 답변 시도 기록 표시</li>
-          <li><strong>퀴즈 종료</strong>: 출제자가 강제 종료 가능</li>
+          <li>중복 정답 방지 → 한 명당 1회만 인정됩니다.</li>
+          <li>서버당 한 번에 1개의 퀴즈만 실행할 수 있습니다.</li>
         </ul>
       </div>
 
