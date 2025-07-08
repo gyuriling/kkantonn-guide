@@ -3,78 +3,312 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🛠 도구 명령어 - 깡통 굴리기</title>
+  <title>🛠️ 도구 명령어 - 깡통 굴리기</title>
   <link rel="stylesheet" href="styles.css" />
   <script>
     function openModal(id) {
       document.getElementById(id).style.display = "block";
-      document.body.style.overflow = "hidden"; // ✅ 배경 스크롤 잠금
+      document.body.style.overflow = "hidden"; // ✅ 팝업 열 때 배경 스크롤 잠금
     }
     function closeModal(id) {
       document.getElementById(id).style.display = "none";
-      document.body.style.overflow = ""; // ✅ 배경 스크롤 해제
+      document.body.style.overflow = ""; // ✅ 팝업 닫을 때 스크롤 복원
     }
   </script>
 </head>
 <body>
   <header class="main-header">
     <img src="kkantonn.png" alt="깡통이" class="header-icon" />
-    <h1 class="main-title">🛠 도구 명령어</h1>
-    <p class="main-subtitle">깡통이의 유용한 도구 기능</p>
+    <h1 class="main-title">🛠️ 도구 명령어</h1>
+    <p class="main-subtitle">깡통이의 다양한 도구 기능 모음</p>
   </header>
 
   <main class="grid-container">
-    <!-- 도구 명령어 카드들 -->
-    <div class="command-card" onclick="openModal('calcModal')" style="--accent-color: #4D7A94;">
-      <h2>/계산</h2>
-      <p>간단한 수식을 계산해줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('translateModal')" style="--accent-color: #4D7A94;">
-      <h2>/번역</h2>
-      <p>입력한 문장을 번역해줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('convertModal')" style="--accent-color: #4D7A94;">
-      <h2>/변환</h2>
-      <p>문자열을 변환해줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('randomModal')" style="--accent-color: #4D7A94;">
-      <h2>/랜덤숫자</h2>
-      <p>범위 내 랜덤 숫자를 생성합니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('countModal')" style="--accent-color: #4D7A94;">
-      <h2>/글자수세기</h2>
-      <p>텍스트의 글자 수를 세줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('dictModal')" style="--accent-color: #4D7A94;">
-      <h2>/사전</h2>
-      <p>단어의 뜻을 검색합니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('avatarModal')" style="--accent-color: #4D7A94;">
-      <h2>/프사</h2>
-      <p>유저의 프로필 사진을 확인합니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('currencyModal')" style="--accent-color: #4D7A94;">
-      <h2>/환율</h2>
-      <p>통화 단위를 변환합니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('userModal')" style="--accent-color: #4D7A94;">
-      <h2>/유저</h2>
-      <p>유저 정보를 확인합니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('catModal')" style="--accent-color: #4D7A94;">
-      <h2>/고양이</h2>
-      <p>랜덤 고양이 사진을 보여줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('pickModal')" style="--accent-color: #4D7A94;">
-      <h2>/골라</h2>
-      <p>입력한 항목 중 하나를 랜덤으로 골라줍니다.</p>
-    </div>
-
-    <!-- 🔥 빈 카드 -->
+    <div class="command-card" onclick="openModal('calcModal')" style="--accent-color: #7D9D9C;">
+      <h2>/계산</h2><p>입력한 수식 계산</p></div>
+    <div class="command-card" onclick="openModal('pickModal')" style="--accent-color: #7D9D9C;">
+      <h2>/골라</h2><p>여러 항목 중 랜덤 선택</p></div>
+    <div class="command-card" onclick="openModal('countModal')" style="--accent-color: #7D9D9C;">
+      <h2>/글자수세기</h2><p>문자열 글자 수 계산</p></div>
+    <div class="command-card" onclick="openModal('randomModal')" style="--accent-color: #7D9D9C;">
+      <h2>/랜덤숫자</h2><p>랜덤 숫자 생성</p></div>
+    <div class="command-card" onclick="openModal('convertModal')" style="--accent-color: #7D9D9C;">
+      <h2>/변환</h2><p>한글-영문 자판 변환</p></div>
+    <div class="command-card" onclick="openModal('dictModal')" style="--accent-color: #7D9D9C;">
+      <h2>/사전</h2><p>국어/영어 단어 검색</p></div>
+    <div class="command-card" onclick="openModal('userModal')" style="--accent-color: #7D9D9C;">
+      <h2>/유저</h2><p>서버 유저 정보 표시</p></div>
+    <div class="command-card" onclick="openModal('avatarModal')" style="--accent-color: #7D9D9C;">
+      <h2>/프사</h2><p>프로필 사진 출력</p></div>
+    <div class="command-card" onclick="openModal('translateModal')" style="--accent-color: #7D9D9C;">
+      <h2>/번역</h2><p>문장 번역</p></div>
+    <div class="command-card" onclick="openModal('exchangeModal')" style="--accent-color: #7D9D9C;">
+      <h2>/환율</h2><p>실시간 환율 계산</p></div>
+    <div class="command-card" onclick="openModal('serverModal')" style="--accent-color: #7D9D9C;">
+      <h2>/서버</h2><p>현재 서버 정보 표시</p></div>
+          <!-- 🩶 빈 카드 추가 -->
     <div class="command-card placeholder-card">
       <h2>준비중</h2>
       <p>새로운 도구 기능이 추가될 예정입니다.</p>
     </div>
   </main>
+
+  <!-- 팝업: /계산 -->
+  <div id="calcModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🧮 /계산</h2>
+        <span class="close" onclick="closeModal('calcModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/계산 [수식]</code></p>
+        <p>
+          입력한 수식을 계산합니다.<br>
+          <i>math.js 모듈로 동작하여 복잡한 연산과 함수도 지원합니다.</i><br>
+          지원 연산: <code>+ - * / ^ sqrt() sin() cos() log()</code>, 괄호 포함
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/계산 (5+3)^2</code><br>
+          ➡ 결과: 64
+        </p>
+        <div class="example-placeholder">🎞️ /계산 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /골라 -->
+  <div id="pickModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🎲 /골라</h2>
+        <span class="close" onclick="closeModal('pickModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/골라 [항목] 선택사항:[개수]</code></p>
+        <p>
+          입력된 단어들 중 랜덤으로 선택합니다.<br>
+          구분자: 공백(" "), 기본 선택 개수는 1개
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/골라 치킨 피자 떡볶이</code><br>
+          ➡ 치킨
+        </p>
+        <div class="example-placeholder">🎞️ /골라 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /글자수세기 -->
+  <div id="countModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📝 /글자수세기</h2>
+        <span class="close" onclick="closeModal('countModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/글자수세기 [텍스트]</code></p>
+        <p>
+          입력한 문자열의 공백 포함/제외 글자 수와 바이트 수를 계산합니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/글자수세기 안녕하세요</code><br>
+          ➡ 공백포함 : **5** (15 byte)<br>
+          ➡ 공백제외 : **5** (15 byte)
+        </p>
+        <div class="example-placeholder">🎞️ /글자수세기 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /랜덤숫자 -->
+  <div id="randomModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🎲 /랜덤숫자</h2>
+        <span class="close" onclick="closeModal('randomModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/랜덤숫자 [최소] [최대] [개수] 선택사항:[중복허용]</code></p>
+        <p>
+          최소~최대 범위 내에서 랜덤 숫자를 생성합니다.<br>
+          <strong>옵션:</strong> <code>중복허용</code> 입력 시 중복 가능
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/랜덤숫자 1 10 3</code><br>
+          ➡ 랜덤 숫자(중복 없음): 2, 7, 5
+        </p>
+        <div class="example-placeholder">🎞️ /랜덤숫자 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /변환 -->
+  <div id="convertModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🔤 /변환</h2>
+        <span class="close" onclick="closeModal('convertModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/변환 [텍스트]</code></p>
+        <p>
+          QWERTY 자판 입력 → 한글 변환 또는 한글 입력 → 영문 자판 변환
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/변환 dkssud</code><br>
+          ➡ 안녕
+        </p>
+        <div class="example-placeholder">🎞️ /변환 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /사전 -->
+  <div id="dictModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>📚 /사전</h2>
+        <span class="close" onclick="closeModal('dictModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/사전 [검색어] [종류]</code></p>
+        <p>
+          네이버 국어/영어 사전에서 단어를 검색해 첫 번째 뜻과 예문을 출력합니다.<br>
+          (임베드 형태로 반환)
+        </p>
+        <p><strong>예시 (임베드 본문):</strong></p>
+        <pre>
+🤍 고양이 (국어사전) 🤍
+1. 고양잇과의 포유류
+예문: 고양이는 귀엽다.
+해석: Cats are cute.
+        </pre>
+        <div class="example-placeholder">🎞️ /사전 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /유저 -->
+  <div id="userModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>👤 /유저</h2>
+        <span class="close" onclick="closeModal('userModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/유저 선택사항:[대상]</code></p>
+        <p>
+          지정한 유저의 정보를 출력합니다.<br>
+          (임베드 형태로 반환, 프로필 사진 포함)
+        </p>
+        <p><strong>예시 (임베드 본문):</strong></p>
+        <pre>
+:white_heart: 규리 :white_heart: 
+유저 이름: @규리짱
+유저 ID: `123456789012345678`
+역할: @관리자 @멤버
+계정 생성일: 2023-01-01 12:34:56 (<t:1672531199:R>)
+서버 가입일: 2024-03-15 15:00:00 (<t:1710505200:R>)
+        </pre>
+        <div class="example-placeholder">🎞️ /유저 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /프사 -->
+  <div id="avatarModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🖼️ /프사</h2>
+        <span class="close" onclick="closeModal('avatarModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/프사 선택사항:[유저]</code></p>
+        <p>
+          지정한 유저의 프로필 사진을 출력합니다.<br>
+          지정 없으면 본인 프로필 사진 출력
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/프사</code><br>
+          ➡ 프로필 사진: [이미지 링크]
+        </p>
+        <div class="example-placeholder">🎞️ /프사 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /번역 -->
+  <div id="translateModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🌎 /번역</h2>
+        <span class="close" onclick="closeModal('translateModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/번역 [텍스트] 선택사항:[언어]</code></p>
+        <p>
+          입력한 문장을 번역합니다.<br>
+          언어 옵션 없으면 기본으로 한국어로 번역.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/번역 hello</code><br>
+          ➡ 안녕하세요
+        </p>
+        <div class="example-placeholder">🎞️ /번역 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /환율 -->
+  <div id="exchangeModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>💱 /환율</h2>
+        <span class="close" onclick="closeModal('exchangeModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/환율 [금액] [입력통화] [출력통화]</code></p>
+        <p>
+          입력한 금액을 현재 환율로 변환합니다.<br>
+          출력은 임베드 형태.
+        </p>
+        <p><strong>예시 (임베드 본문):</strong></p>
+        <pre>
+🤍 환율 계산 🤍
+1,000            USD 🇺🇸
+     ⇌
+1,312,500        KRW 🇰🇷
+Footer: 1 USD = 1,312.500000 KRW
+        </pre>
+        <div class="example-placeholder">🎞️ /환율 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /서버 -->
+  <div id="serverModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🛠️ /서버</h2>
+        <span class="close" onclick="closeModal('serverModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/서버</code></p>
+        <p>
+          현재 서버 정보를 출력합니다.<br>
+          출력은 임베드 형태.
+        </p>
+        <p><strong>예시 (임베드 본문):</strong></p>
+        <pre>
+🤍 깡통이 테스트 서버 🤍
+서버 ID: `987654321012345678`
+서버 대장: @규리
+총 멤버 수: 54명
+서버 생성일: 2021-05-10 14:23:45 (<t:1620656625:R>)
+        </pre>
+        <div class="example-placeholder">🎞️ /서버 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

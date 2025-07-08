@@ -8,11 +8,11 @@
   <script>
     function openModal(id) {
       document.getElementById(id).style.display = "block";
-      document.body.style.overflow = "hidden"; // ✅ 배경 스크롤 잠금
+      document.body.style.overflow = "hidden"; // ✅ 팝업 열 때 배경 스크롤 잠금
     }
     function closeModal(id) {
       document.getElementById(id).style.display = "none";
-      document.body.style.overflow = ""; // ✅ 배경 스크롤 해제
+      document.body.style.overflow = ""; // ✅ 팝업 닫을 때 스크롤 복원
     }
   </script>
 </head>
@@ -20,38 +20,50 @@
   <header class="main-header">
     <img src="kkantonn.png" alt="깡통이" class="header-icon" />
     <h1 class="main-title">🍱 추천 명령어</h1>
-    <p class="main-subtitle">깡통이의 메뉴/음료/간식 추천 명령어</p>
+    <p class="main-subtitle">깡통이의 추천 기능 모음</p>
   </header>
 
   <main class="grid-container">
-    <!-- 추천 명령어 카드들 -->
-    <div class="command-card" onclick="openModal('menuModal')" style="--accent-color: #6C9FAF;">
-      <h2>/메뉴추천</h2>
-      <p>식사 메뉴를 랜덤으로 추천해줍니다.</p>
-    </div>
-    <div class="command-card" onclick="openModal('snackModal')" style="--accent-color: #6C9FAF;">
+    <!-- /간식추천 -->
+    <div class="command-card" onclick="openModal('snackModal')" style="--accent-color: #85A389;">
       <h2>/간식추천</h2>
-      <p>간식을 랜덤으로 추천해줍니다.</p>
+      <p>랜덤 간식 추천</p>
     </div>
-    <div class="command-card" onclick="openModal('drinkModal')" style="--accent-color: #6C9FAF;">
+
+    <!-- /음료추천 -->
+    <div class="command-card" onclick="openModal('drinkModal')" style="--accent-color: #85A389;">
       <h2>/음료추천</h2>
-      <p>커피 포함 음료를 추천해줍니다.</p>
+      <p>랜덤 음료 추천</p>
     </div>
-    <div class="command-card" onclick="openModal('ramenModal')" style="--accent-color: #6C9FAF;">
+
+    <!-- /라면추천 -->
+    <div class="command-card" onclick="openModal('ramenModal')" style="--accent-color: #85A389;">
       <h2>/라면추천</h2>
-      <p>라면 종류를 랜덤으로 추천해줍니다.</p>
+      <p>랜덤 라면 추천</p>
     </div>
-    <div class="command-card" onclick="openModal('mixedMenuModal')" style="--accent-color: #6C9FAF;">
+
+    <!-- /뒤죽박죽메뉴추천 -->
+    <div class="command-card" onclick="openModal('mixedModal')" style="--accent-color: #85A389;">
       <h2>/뒤죽박죽메뉴추천</h2>
-      <p>뒤죽박죽 섞인 메뉴를 추천해줍니다.</p>
+      <p>뒤죽박죽 랜덤 추천</p>
     </div>
-    <div class="command-card" onclick="openModal('natureMenuModal')" style="--accent-color: #6C9FAF;">
+
+    <!-- /메뉴추천 -->
+    <div class="command-card" onclick="openModal('menuModal')" style="--accent-color: #85A389;">
+      <h2>/메뉴추천</h2>
+      <p>랜덤 식사 메뉴 추천</p>
+    </div>
+
+    <!-- /자연인메뉴추천 -->
+    <div class="command-card" onclick="openModal('natureModal')" style="--accent-color: #85A389;">
       <h2>/자연인메뉴추천</h2>
-      <p>자연인 스타일의 메뉴를 추천해줍니다.</p>
+      <p>자연인 감성 메뉴 추천</p>
     </div>
-    <div class="command-card" onclick="openModal('songModal')" style="--accent-color: #6C9FAF;">
+
+    <!-- /노래추천 -->
+    <div class="command-card" onclick="openModal('musicModal')" style="--accent-color: #85A389;">
       <h2>/노래추천</h2>
-      <p>랜덤으로 노래를 추천해줍니다.</p>
+      <p>랜덤 노래 추천</p>
     </div>
 
     <!-- 🔥 빈 카드 -->
@@ -61,14 +73,153 @@
     </div>
   </main>
 
-  <!-- 팝업들: 각 명령어 별로 추가 (예시는 하나만 표시) -->
+  <!-- 팝업: /간식추천 -->
+  <div id="snackModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🍪 /간식추천</h2>
+        <span class="close" onclick="closeModal('snackModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/간식추천</code></p>
+        <p>
+          깡통이가 등록된 간식 리스트에서 하나를 랜덤으로 추천합니다.<br>
+          과자, 빵, 초콜릿 등 다양한 간식 항목이 포함되어 있습니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/간식추천</code> → “🍪 홈런볼”
+        </p>
+        <div class="example-placeholder">🎞️ /간식추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /음료추천 -->
+  <div id="drinkModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🥤 /음료추천</h2>
+        <span class="close" onclick="closeModal('drinkModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/음료추천 선택사항:[커피]</code></p>
+        <p>
+          깡통이가 등록된 음료 리스트에서 하나를 랜덤으로 추천합니다.<br>
+          선택사항: <code>커피</code> 옵션을 입력하면 커피류만 추천합니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/음료추천</code> → “🥤 초코쉐이크”<br>
+          <code>/음료추천 커피</code> → “☕ 바닐라라떼”
+        </p>
+        <div class="example-placeholder">🎞️ /음료추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /라면추천 -->
+  <div id="ramenModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🍜 /라면추천</h2>
+        <span class="close" onclick="closeModal('ramenModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/라면추천</code></p>
+        <p>
+          깡통이가 등록된 라면 리스트에서 하나를 랜덤으로 추천합니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/라면추천</code> → “🍜 불닭볶음면”
+        </p>
+        <div class="example-placeholder">🎞️ /라면추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /뒤죽박죽메뉴추천 -->
+  <div id="mixedModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🍥 /뒤죽박죽메뉴추천</h2>
+        <span class="close" onclick="closeModal('mixedModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/뒤죽박죽메뉴추천</code></p>
+        <p>
+          깡통이가 메뉴, 간식, 음료를 뒤섞어 하나를 랜덤으로 추천합니다.<br>
+          독특하고 엉뚱한 조합이 나올 수 있습니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/뒤죽박죽메뉴추천</code> → “🍙 비빔밥”
+        </p>
+        <div class="example-placeholder">🎞️ /뒤죽박죽메뉴추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /메뉴추천 -->
   <div id="menuModal" class="modal">
     <div class="modal-content">
-      <h2>🍱 /메뉴추천</h2>
-      <span class="close" onclick="closeModal('menuModal')">&times;</span>
-      <p><strong>📖 사용법:</strong> <code>/메뉴추천</code></p>
-      <p>식사 메뉴를 랜덤으로 추천합니다. 깡통이가 메뉴리스트에서 한 가지를 골라줍니다.</p>
-      <div class="example-placeholder">🎞️ /메뉴추천 사용 예시 GIF 자리</div>
+      <div class="modal-header">
+        <h2>🍲 /메뉴추천</h2>
+        <span class="close" onclick="closeModal('menuModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/메뉴추천</code></p>
+        <p>
+          깡통이가 식사 메뉴 리스트에서 하나를 랜덤으로 추천합니다.<br>
+          국밥, 찌개, 덮밥 등 식사 메뉴가 포함됩니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/메뉴추천</code> → “🍲 제육볶음”
+        </p>
+        <div class="example-placeholder">🎞️ /메뉴추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /자연인메뉴추천 -->
+  <div id="natureModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🌿 /자연인메뉴추천</h2>
+        <span class="close" onclick="closeModal('natureModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/자연인메뉴추천</code></p>
+        <p>
+          자연인 느낌의 건강식 또는 산골 감성 메뉴를 랜덤으로 추천합니다.
+        </p>
+        <p><strong>예시:</strong><br>
+          <code>/자연인메뉴추천</code> → “🌿 곤드레나물밥”
+        </p>
+        <div class="example-placeholder">🎞️ /자연인메뉴추천 사용 예시 GIF 자리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 팝업: /노래추천 -->
+  <div id="musicModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🎵 /노래추천</h2>
+        <span class="close" onclick="closeModal('musicModal')">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p><strong>📖 사용법:</strong> <code>/노래추천</code></p>
+        <p>
+          깡통이가 <code>songs.json</code>에서 아티스트, 곡명, 유튜브 링크를 불러와 랜덤 추천합니다.<br>
+          썸네일 이미지도 포함됩니다.
+        </p>
+        <p><strong>예시:</strong></p>
+        <ul>
+          <li>🎵 <strong>RADWIMPS, Toko Miura - Celebration</strong><br>
+          🔗 <a href="https://youtube.com/watch?v=2W3raKWEDUo" target="_blank">YouTube 보기</a></li>
+          <li>🎵 <strong>Official Hige Dandism - Pretender</strong><br>
+          🔗 <a href="https://youtu.be/37W7Y2RRyiM" target="_blank">YouTube 보기</a></li>
+        </ul>
+        <div class="example-placeholder">🎞️ /노래추천 사용 예시 GIF 자리</div>
+      </div>
     </div>
   </div>
 </body>
