@@ -62,30 +62,38 @@
   </main>
 
   <!-- 팝업: /가챠 -->
-  <div id="gachaModal" class="modal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>🎮 /가챠</h2>
-        <span class="close" onclick="closeModal('gachaModal')">&times;</span>
-      </div>
-      <div class="modal-body">
-        <p><strong>📖 사용법:</strong> <code>/가챠 [확률] [재화] 선택사항:[단위] [최소] [최대]</code></p>
-        <p>
-          입력한 확률로 가챠 시뮬레이션을 실행합니다.<br>
-          매우 낮은 확률의 경우 실행 시간이 길어질 수 있으며, 깡통이가 자동으로 중단시키는 제한도 포함되어 있습니다.
-        </p>
+<div id="gachaModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>🎮 /가챠</h2>
+      <span class="close" onclick="closeModal('gachaModal')">&times;</span>
+    </div>
+    <div class="modal-body">
+      <p><strong>📖 사용법:</strong><br>
+      <code>/가챠 확률 재화 선택:[단위] [최소] [최대]</code>
+      </p>
+
+      <div class="command-options">
+        <h3>🛠 옵션 설명</h3>
         <ul>
-          <li>✔️ 단위 옵션으로 재화 이름 지정 가능 (예: “루나”)</li>
-          <li>✔️ 최소·최대 개수 옵션으로 1회당 획득량 설정</li>
-          <li>✔️ 매우 낮은 확률에 대한 시도 제한 처리</li>
+          <li><strong>확률 (필수):</strong> 성공 확률 (0~100)</li>
+          <li><strong>재화 (필수):</strong> 시도당 비용</li>
+          <li><strong>단위 (선택):</strong> 재화 이름 (예: 루나)</li>
+          <li><strong>최소·최대 (선택):</strong> 1회당 얻는 개수 범위 (지정 없으면 기본 1)</li>
         </ul>
-        <p><strong>예시:</strong><br>
-          <code>/가챠 0.01 100 단위:루나</code> → “총 237번 시도하여, 23,700루나 사용해써요!”
-        </p>
-        <div class="example-placeholder">🎞️ /가챠 사용 예시 GIF 자리</div>
       </div>
+
+      <div class="command-example">
+        <h3>💡 예시</h3>
+        <pre><code>/가챠 0.5 200 단위:코인 최소:1 최대:5</code></pre>
+        <p>→ “총 37회 시도, 7,400코인 사용해써요!”</p>
+      </div>
+
+      <div class="example-placeholder">🎞️ /가챠 사용 예시 GIF 자리</div>
     </div>
   </div>
+</div>
+
 
   <!-- 팝업: /숫자야구 -->
   <div id="baseballModal" class="modal">
